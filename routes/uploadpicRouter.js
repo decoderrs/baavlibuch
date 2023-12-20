@@ -16,9 +16,10 @@ uploadRouter.route('/')
     res.end('GET operation not supported on /imageUpload');
 })
 .post(cors.cors, cors.corsWithOptions,Upload.single('profile_pic') ,(req,res) => {
+    console.log(req.file,JSON.stringify(req.body));
     res.statusCode = 200;
     res.setHeader('Content-Type','application/json');
-    res.json(req.file);
+    res.json(JSON.stringify(req.file),JSON.stringify(req.body));
 })
 
 module.exports = uploadRouter;

@@ -9,12 +9,12 @@ contactlogRouter.use(bodyParser.json());
 contactlogRouter.route('/log')
 .options(cors.corsWithOptions, (req,res) => {res.sendStatus(200);})
 .get( cors.cors,(req,res,next) => {
-    Contactlogs.findOne({localhost_name: req.header('Origin')})
+    Contactlogs.find()
     .then((logs) => {
        if ( logs !== null){
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(logs)
+        res.json(logs);
        }
        else{
         err = new Error('Server '+ req.header('Origin') + ' not found');

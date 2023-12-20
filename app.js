@@ -18,6 +18,7 @@ connect.then((db) => {
 var friendRouter = require('./routes/friendRouter.js');
 var contactlogRouter = require('./routes/contactlogRouter.js');
 var imageUploadRouter = require('./routes/uploadpicRouter.js');
+var addfriendRouter = require('./routes/addfriendRouter.js');
 
 var app = express();
 
@@ -42,11 +43,13 @@ app.use('/', indexRouter);
 app.use('/friend-api', friendRouter);
 app.use('', contactlogRouter);
 app.use('/imageUpload', imageUploadRouter);
+app.use('/add-friend', addfriendRouter);
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
 
 
 // error handler
