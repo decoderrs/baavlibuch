@@ -7,3 +7,6 @@ export const ADD_PROFILE = 'ADD_PROFILE';
 export const PROFILE_LOADING = 'PROFILE_LOADING';
 export const PROFILE_FAILED = 'PROFILE_FAILED';
 export const GET_PROFILE = 'GET_PROFILE';
+
+export const ADD_FRIEND = 'ADD_FRIEND';
+export const ADD_FRIEND_FAILED = 'ADD_FRIEND_FAILED';

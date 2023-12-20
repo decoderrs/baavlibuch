@@ -7,9 +7,9 @@ export const Profiles = (state = {
 }, action) => {
     switch (action.type) {
         case ActionTypes.ADD_PROFILE:
-            return {...state, isLoading: false, errMess: null, profile: action.payload }
+            return {...state, isLoading: false, errMess: null, profiles: action.payload }
         case ActionTypes.PROFILE_LOADING:
-            return {...state, isLoading: true, errMess:null, payload: [] }
+            return {...state, isLoading: true, errMess:null, profiles: [] }
             case ActionTypes.GET_PROFILE:
             var profile = action.payload;
             return  {...state, profile: state.profiles.concat(profile)}
